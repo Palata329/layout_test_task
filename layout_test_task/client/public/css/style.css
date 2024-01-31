@@ -1,0 +1,258 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+body {
+	font-family: 'Museo-Sans-Cyrl', sans-serif;
+}
+
+p {
+	margin: 0;
+}
+
+:root {
+  --color-blue: #5813FE;
+  --color-lite-purple: #8E87A3;
+}
+/* нет смысла оюъявлять переменную цветам которые встречаются менее 4х раз */
+
+@font-face {
+	font-family: "Museo-Sans-Cyrl";
+	src: local("Museo-Sans-Cyrl-700-Regular"),
+	  url("../fonts/Museo-Sans-Cyrl-700-Regular.woff2") format("woff2"),
+	  url("../fonts/Museo-Sans-Cyrl-700-Regular.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+font-family: "Museo-Sans-Cyrl";
+src: local("Museo-Sans-Cyrl-500-Regular"),
+	url("../fonts/Museo-Sans-Cyrl-500-Regular.woff2") format("woff2"),
+	url("../fonts/Museo-Sans-Cyrl-500-Regular.woff") format("woff");
+font-weight: 500;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {
+	font-family: "Museo-Sans-Cyrl";
+	src: local("Museo-Sans-Cyrl-300-Regular"),
+	url("../fonts/Museo-Sans-Cyrl-300-Regular.woff2") format("woff2"),
+	url("../fonts/Museo-Sans-Cyrl-300-Regular.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.choose-tariff__container {
+	max-width: 320px;
+	padding: 45px 20px 91px;
+  background-color: #F5F6F9;
+}
+
+.choose-tariff__title {
+  margin: 0;
+  margin-bottom: 15px;
+	color: #2C1D5D;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 120%; /* 19.2px */
+	letter-spacing: 1.778px;
+	text-transform: uppercase;
+}
+
+.choose-tariff__strip {
+  margin-bottom: 18px;
+  display: block;
+  width: 51px;
+  height: 2px;
+  background-color: var(--color-blue);
+}
+
+.choose-tariff__manual {
+  margin-bottom: 28px;
+  color: var(--color-lite-purple);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px; /* 157.143% */
+}
+
+.settings-tariff {
+  position: relative;
+  padding: 25px 21px 35px;
+  border: 1px solid var(--color-blue);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.settings-tariff__title {
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  color: var(--color-blue);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.settings-tariff__list {
+  display: flex;
+  margin-bottom: 30px;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.settings-tariff__select-box {
+  display: flex;
+  margin-bottom: 14px;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.settings-tariff__btn-less,
+.settings-tariff__btn-more {
+  border: 2px solid var(--color-blue);
+  border-radius: 50%;
+  font-weight: 700;
+  color: var(--color-blue);
+  width: 25px;
+  height: 25px;
+}
+
+.settings-tariff__btn-more {
+  font-size: 20px;
+  line-height: 12px;
+}
+
+
+.checkbox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox__name {
+  position: relative;
+  color: var(--color-lite-purple);
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  left: 16px;
+}
+
+.checkbox__check {
+  position: absolute;
+  appearance: none;
+}
+
+.checkbox__name::before {
+	content: "";
+	position: absolute;
+  height: 25px;
+  width: 25px;
+  left: -35px;
+  top: -3px;
+  border: 1px solid var(--color-lite-purple);
+  border-radius: 1px;
+}
+
+.checkbox__name::after {
+	content: "";
+	position: absolute;
+  height: 25px;
+  width: 25px;
+  left: -35px;
+  top: -3px;
+  background-image: url(../img/check.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+  opacity: 0;
+}
+
+.checkbox__check:checked + .checkbox__name::after {
+	opacity: 1;
+}
+
+.settings-tariff__meaning {
+  color: #2C1D5D;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.settings-tariff__measurement {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.settings-tariff__soc-text {
+  margin-bottom: 4px;
+  color:var(--color-lite-purple);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.settings-tariff__social {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.settings-tariff__more-soc {
+  margin-left: 6px;
+  color:var(--color-lite-purple);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* кнопку делаем резиновую с минимальными размерами, так как текст в ней может меняться */
+.settings-tariff__btn-form {
+  position: relative;
+  padding: 10px 15px;
+  min-width: 140px;
+  min-height: 40px;
+  border-radius: 10px;
+  background: var(--color-blue);
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 133.333%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  left: 50%;
+  transform: translateX(-50%);
+}
+

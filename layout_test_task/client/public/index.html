@@ -1,0 +1,122 @@
+﻿<!doctype html>
+
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/media.css" адаптивности нет> -->
+  <!-- <link rel="icon" href="img/favicon.svg"> Фавикона нет -->
+
+  <!-- поставим прелоад чтобы нужные шрифты подгрузились заранее-->
+  <link rel="preload" href="fonts/Museo-Sans-Cyrl-300-Regular.woff2" as="font">
+  <link rel="preload" href="fonts/Museo-Sans-Cyrl-500-Regular.woff2" as="font">
+  <link rel="preload" href="fonts/Museo-Sans-Cyrl-700-Regular.woff2" as="font">
+
+  <title>
+   Тест тарифы
+  </title>
+</head>
+
+<body>
+  <!-- Так как это блок какого-то сайта, то хедер и футер опустим. -->
+  <main>
+    <section class="choose-tariff">
+      <div class="choose-tariff__container">
+        <!-- Скорее всего на сайте уже есть главный заголовок h1, так как это секция то я использую h2 -->
+        <h2 class="choose-tariff__title">
+          выберите свой тариф
+        </h2>
+        <span class="choose-tariff__strip"></span>
+        <p class="choose-tariff__manual">
+          Используйте кнопки &Prime;<strong>&lt;/&gt;</strong>&Prime; и &Prime;<strong>+/-</strong>&Prime;, чтобы найти подходящий тариф.
+          <!-- Не лучшая практика использовать br но для более "идеального пикселя" в данном тесте использую -->
+          <br>
+          Меняйте операторов, выбирайте значения гигабайт, минут и&nbsp;абонплаты. Используйте &Prime;&nbsp;<strong>зафиксировать</strong>&nbsp;&Prime;, чтобы этот параметр не&nbsp;менялся.
+          Жмите &Prime;&nbsp;<strong>Подробнее</strong>&nbsp;&Prime;, чтобы увидеть детали и&nbsp;подключить тариф
+        </p>
+        <!-- сделаем форму отдельным элементом и внутренние её элементы будут относится только к ней по БЭМ -->
+        <form class="choose-tariff__settings-tariff settings-tariff" method="post" action="https://jsonplaceholder.typicode.com/posts">
+          <h3 class="settings-tariff__title">
+            Свой тариф
+          </h3>
+          <ul class="settings-tariff__list list-reset">
+            <li class="settings-tariff__item">
+              <div class="settings-tariff__select-box">
+                <!-- Можно было использовать ссылки со вставленными svg картинками, но svg очень тяжёлые, поэтому используем и стилизуем кнопки, которые запрограммируются на js -->
+                <button class="btn-reset settings-tariff__btn-more">&lt;</button>
+                <!-- используем правильный формат картинки с минимальным весом -->
+                <img src="img/logo-bee.webp" alt="logo_beeline">
+                <button class="btn-reset settings-tariff__btn-more">&gt;</button>
+              </div>
+              <label class="settings-tariff__checkbox  checkbox">
+                <input type="checkbox" class="checkbox__check" checked>
+                <span class="checkbox__name" >зафиксировать</span>
+              </label>
+            </li>
+            <li class="settings-tariff__item">
+              <div class="settings-tariff__select-box">
+                <button class="btn-reset settings-tariff__btn-less">&mdash;</button>
+                <p class="settings-tariff__meaning">
+                  30 <span class="settings-tariff__measurement">гб</span>
+                </p>
+                <button class="btn-reset settings-tariff__btn-more">+</button>
+              </div>
+              <label class="settings-tariff__checkbox  checkbox">
+                <input type="checkbox" class="checkbox__check">
+                <span class="checkbox__name" >зафиксировать</span>
+              </label>
+            </li>
+            <li class="settings-tariff__item">
+              <div class="settings-tariff__select-box">
+                <button class="btn-reset settings-tariff__btn-less">&mdash;</button>
+                <p class="settings-tariff__meaning">
+                  500 <span class="settings-tariff__measurement">мин</span>
+                </p>
+                <button class="btn-reset settings-tariff__btn-more">+</button>
+              </div>
+              <label class="settings-tariff__checkbox  checkbox">
+                <input type="checkbox" class="checkbox__check">
+                <span class="checkbox__name" >зафиксировать</span>
+              </label>
+            </li>
+            <li class="settings-tariff__item">
+              <div class="settings-tariff__select-box">
+                <button class="btn-reset settings-tariff__btn-less">&mdash;</button>
+                <p class="settings-tariff__meaning">
+                  120 <span class="settings-tariff__measurement">руб/мес</span>
+                </p>
+                <button class="btn-reset settings-tariff__btn-more">+</button>
+              </div>
+              <label class="settings-tariff__checkbox  checkbox">
+                <input type="checkbox" class="checkbox__check">
+                <span class="checkbox__name" >зафиксировать</span>
+              </label>
+            </li>
+          </ul>
+          <p class="settings-tariff__soc-text">
+            Безлимит&nbsp;на:
+          </p>
+          <div class="settings-tariff__social">
+            <!-- нет смысла использовать svg формат иконок, так как анимации с ними никакой не происходит, а формат svg очень тяжёлый, поэтому используем png, чтобы был прозрачный фон -->
+            <img class="settings-tariff__soc-logo" src="img/logo-hz.png" alt="лого соцсети">
+            <img class="settings-tariff__soc-logo" src="img/logo-tg.png" alt="лого соцсети">
+            <img class="settings-tariff__soc-logo" src="img/logo-wcp.png" alt="лого соцсети">
+            <img class="settings-tariff__soc-logo" src="img/logo-ytube.png" alt="лого соцсети">
+            <img class="settings-tariff__soc-logo" src="img/logo-vk.png" alt="лого соцсети">
+            <span class="settings-tariff__more-soc">+3</span>
+          </div>
+          <button class="btn-reset settings-tariff__btn-form">
+            подробнее
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
